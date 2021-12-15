@@ -22,7 +22,9 @@ public class Chessboard {
 			marked = true;
 		}
 		
-		public void unmark() {}
+		public void unmark() {
+			marked = false;
+		}
 		
 		public String toString() {
 			/*If statements expanded
