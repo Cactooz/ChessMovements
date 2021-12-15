@@ -69,7 +69,27 @@ public class Chessboard {
 		}
 	}
 	
-	public String toString() {}
+	public String toString() {
+		StringBuilder stringBuilder = new StringBuilder();
+		
+		//Add the column names
+		stringBuilder.append("  A B C D E F G H\n");
+		
+		//Loop through all rows
+		for(int i = 0; i < numberOfRows; i++) {
+			//Append the row name
+			stringBuilder.append(i).append(" ");
+			
+			//Loop through all columns
+			for(int j = 0; j < numberOfColumns; j++) {
+				//Add the fields
+				stringBuilder.append(fields[i][j].toString()).append("");
+			}
+			//Move down to a new row
+			stringBuilder.append("\n");
+		}
+		return stringBuilder.toString();
+	}
 	
 	public boolean isValidField(char row, byte column) {}
 	
