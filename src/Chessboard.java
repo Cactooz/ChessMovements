@@ -105,8 +105,8 @@ public class Chessboard {
 	}
 	
 	public class Pawn extends Chesspiece {
-		public Pawn(char color, char name) {
-			super(color, name);
+		public Pawn(char color) {
+			super(color, 'P');
 		}
 		
 		
@@ -131,13 +131,33 @@ public class Chessboard {
 		}
 	}
 	
-	public class Rook extends Chesspiece {}
+	public class Rook extends Chesspiece {
+		public Rook(char color) {
+			super(color, 'R');
+		}
+	}
 	
-	public class Knight extends Chesspiece {}
+	public class Knight extends Chesspiece {
+		public Knight(char color) {
+			super(color, 'N');
+		}
+	}
 	
-	public class Bishop extends Chesspiece {}
+	public class Bishop extends Chesspiece {
+		public Bishop(char color) {
+			super(color, 'B');
+		}
+	}
 	
-	public class Queen extends Chesspiece {}
+	public class Queen extends Chesspiece {
+		public Queen(char color) {
+			super(color, 'Q');
+		}
+	}
 	
-	public class King extends Chesspiece {}
+	public class King extends Chesspiece {
+		public King(char color) {
+			super(color, 'K');
+		}
+	}
 }
