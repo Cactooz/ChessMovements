@@ -73,17 +73,17 @@ public class Chessboard {
 		StringBuilder stringBuilder = new StringBuilder();
 		
 		//Add the column names
-		stringBuilder.append("  A B C D E F G H\n");
+		stringBuilder.append("   1   2   3   4   5   6   7   8\n");
 		
 		//Loop through all rows
 		for(int i = 0; i < numberOfRows; i++) {
 			//Append the row name
-			stringBuilder.append(i).append(" ");
+			stringBuilder.append(firstRow + i).append("  ");
 			
 			//Loop through all columns
 			for(int j = 0; j < numberOfColumns; j++) {
 				//Add the fields
-				stringBuilder.append(fields[i][j].toString()).append("");
+				stringBuilder.append(fields[i][j].toString()).append("  ");
 			}
 			//Move down to a new row
 			stringBuilder.append("\n");
