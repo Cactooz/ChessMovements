@@ -5,7 +5,10 @@ public class Chessboard {
 		private Chesspiece piece = null;
 		private boolean marked = false;
 		
-		public Field(char row, byte column) {}
+		public Field(char row, byte column) {
+			this.row = row;
+			this.column = column;
+		}
 		
 		public void put(Chesspiece piece) {}
 		
