@@ -72,8 +72,12 @@ public class Chessboard {
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
 		
-		//Add the column names
-		stringBuilder.append("   1   2   3   4   5   6   7   8\n");
+		//Add all the numbers
+		for(int i = 0; i < numberOfColumns; i++) {
+			stringBuilder.append("   ").append(i+1);
+		}
+		//Move to a new row
+		stringBuilder.append("\n");
 		
 		//Loop through all rows
 		for(int i = 0; i < numberOfRows; i++) {
