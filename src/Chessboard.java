@@ -91,7 +91,12 @@ public class Chessboard {
 		return stringBuilder.toString();
 	}
 	
-	public boolean isValidField(char row, byte column) {}
+	public boolean isValidField(char row, byte column) {
+		if(column >= 'a' && column <= 'h' || row > 0 && row < numberOfRows)
+			return true;
+		else
+			return false;
+	}
 	
 	public abstract class Chesspiece {
 		private char color;
