@@ -72,7 +72,10 @@ public class Chessboard {
 		protected char row = 0;
 		protected byte column = -1;
 		
-		protected Chesspiece(char color, char name) {}
+		protected Chesspiece(char color, char name) {
+			this.color = color;
+			this.name = name;
+		}
 		
 		public String toString() {
 			return "" + color + name;
