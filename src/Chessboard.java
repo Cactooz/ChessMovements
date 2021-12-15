@@ -182,6 +182,15 @@ public class Chessboard {
 		int r = row - firstRow;
 		int c = column - firstColumn;
 		
+		public void markReachableFields() {
+			for(int i = 0; i < numberOfColumns; i++) {
+				Chessboard.this.fields[r][i].mark();
+			}
+			for(int i = 0; i < numberOfRows; i++) {
+				Chessboard.this.fields[i][c].mark();
+			}
+		}
+		
 	}
 	public class Knight extends Chesspiece {
 		public Knight(char color) {
