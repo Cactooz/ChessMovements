@@ -191,6 +191,14 @@ public class Chessboard {
 			}
 		}
 		
+		public void unmarkReachableFields() {
+			for(int i = 0; i < numberOfColumns; i++) {
+				Chessboard.this.fields[r][i].unmark();
+			}
+			for(int i = 0; i < numberOfRows; i++) {
+				Chessboard.this.fields[i][c].unmark();
+			}
+		}
 	}
 	public class Knight extends Chesspiece {
 		public Knight(char color) {
