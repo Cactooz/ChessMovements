@@ -10,7 +10,9 @@ public class Chessboard {
 			this.column = column;
 		}
 		
-		public void put(Chesspiece piece) {}
+		public void put(Chesspiece piece) {
+			this.piece = piece;
+		}
 		
 		public Chesspiece take() {}
 		
