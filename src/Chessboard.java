@@ -109,24 +109,23 @@ public class Chessboard {
 			super(color, 'P');
 		}
 		
-		
 		public void markReachableFields() {
 			byte col = (byte) (column + 1);
-			if (Chessboard.this.isValidField (row, col))
+			if(Chessboard.this.isValidField(row, col))
 			{
 				int r = row - firstRow;
 				int c = col - firstColumn;
-				Chessboard.this.fields[r][c].mark ();
+				Chessboard.this.fields[r][c].mark();
 			}
 		}
 		
 		public void unmarkReachableFields() {
 			byte col = (byte) (column + 1);
-			if (Chessboard.this.isValidField (row, col))
+			if(Chessboard.this.isValidField (row, col))
 			{
 				int r = row - firstRow;
 				int c = col - firstColumn;
-				Chessboard.this.fields[r][c].unmark ();
+				Chessboard.this.fields[r][c].unmark();
 			}
 		}
 	}
