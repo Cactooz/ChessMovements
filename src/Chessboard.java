@@ -178,8 +178,11 @@ public class Chessboard {
 		public Rook(char color) {
 			super(color, 'R');
 		}
+		
+		int r = row - firstRow;
+		int c = column - firstColumn;
+		
 	}
-	
 	public class Knight extends Chesspiece {
 		public Knight(char color) {
 			super(color, 'N');
