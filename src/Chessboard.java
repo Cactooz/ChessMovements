@@ -16,11 +16,22 @@ public class Chessboard {
 		public void unmark() {}
 		
 		public String toString() {
+			/*If statements expanded
+				String s;
+				if(marked)
+					s = "xx";
+				else
+					s = "--";
+					
+				if(piece == null)
+					return s;
+				else
+					return piece.toString();*/
+			
 			String s = (marked)? "xx" : "--";
-			return (piece == null)? s : piece.toString ();
+			return (piece == null)? s : piece.toString();
 		}
 	}
-	
 	
 	public static final int numberOfRows = 8;
 	public static final int numberOfColumns = 8;
@@ -41,7 +52,7 @@ public class Chessboard {
 			column = firstColumn;
 			for (int c = 0; c < numberOfColumns; c++)
 			{
-				fields[r][c] = new Field (row, column);
+				fields[r][c] = new Field(row, column);
 				column++;
 			}
 		}
@@ -51,14 +62,12 @@ public class Chessboard {
 	
 	public boolean isValidField(char row, byte column) {}
 	
-	
 	public abstract class Chesspiece {
 		private char color;
 		// w - white, b - black
 		
 		private char name;
-		// K - King, Q - Queen, R - Rook, B - Bishop, N - Knight,
-		// P – Pawn
+		// K - King, Q - Queen, R - Rook, B - Bishop, N - Knight, P – Pawn
 		
 		protected char row = 0;
 		protected byte column = -1;
@@ -74,15 +83,15 @@ public class Chessboard {
 		}
 		
 		public void moveTo(char row, byte column) throws NotValidFieldException {
-			if (!Chessboard.this.isValidField (row, column))
-				throw new NotValidFieldException ("bad field: " + row + column );
+			if(!Chessboard.this.isValidField(row, column))
+				throw new NotValidFieldException("bad field: " + row + column );
 			
 			this.row = row;
 			this.column = column;
 			
-			int    r = row - firstRow;
-			int    c = column - firstColumn;
-			Chessboard.this.fields[r][c].put (this);
+			int r = row - firstRow;
+			int c = column - firstColumn;
+			Chessboard.this.fields[r][c].put(this);
 		}
 		
 		public void moveOut() {}
@@ -92,29 +101,28 @@ public class Chessboard {
 		public abstract void unmarkReachableFields();
 	}
 	
-	
 	public class Pawn extends Chesspiece {
-		public Pawn (char color, char name) {
-			super (color, name);
+		public Pawn(char color, char name) {
+			super(color, name);
 		}
 		
 		
 		public void markReachableFields() {
-			byte    col = (byte) (column + 1);
+			byte col = (byte) (column + 1);
 			if (Chessboard.this.isValidField (row, col))
 			{
-				int    r = row - firstRow;
-				int    c = col - firstColumn;
+				int r = row - firstRow;
+				int c = col - firstColumn;
 				Chessboard.this.fields[r][c].mark ();
 			}
 		}
 		
 		public void unmarkReachableFields() {
-			byte    col = (byte) (column + 1);
+			byte col = (byte) (column + 1);
 			if (Chessboard.this.isValidField (row, col))
 			{
-				int    r = row - firstRow;
-				int    c = col - firstColumn;
+				int r = row - firstRow;
+				int c = col - firstColumn;
 				Chessboard.this.fields[r][c].unmark ();
 			}
 		}
