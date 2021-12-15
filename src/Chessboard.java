@@ -14,7 +14,9 @@ public class Chessboard {
 			this.piece = piece;
 		}
 		
-		public Chesspiece take() {}
+		public void take() {
+			piece = null;
+		}
 		
 		public void mark() {}
 		
