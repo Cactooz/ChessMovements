@@ -77,8 +77,12 @@ public class Chessboard {
 		
 		//Loop through all rows
 		for(int i = 0; i < numberOfRows; i++) {
+			
+			//Convert the int to an ASCII char
+			char name = (char) (firstRow + i);
+			
 			//Append the row name
-			stringBuilder.append(firstRow + i).append("  ");
+			stringBuilder.append(name).append("  ");
 			
 			//Loop through all columns
 			for(int j = 0; j < numberOfColumns; j++) {
