@@ -18,7 +18,9 @@ public class Chessboard {
 			piece = null;
 		}
 		
-		public void mark() {}
+		public void mark() {
+			marked = true;
+		}
 		
 		public void unmark() {}
 		
