@@ -146,6 +146,42 @@ public class Chessboard {
 		public abstract void markReachableFields();
 		
 		public abstract void unmarkReachableFields();
+		
+		public void markDiagonals() {
+			//Mark a line down right
+			for(int i = 0; i < numberOfColumns; i++) {
+				int r = (char) (row + i);
+				int c = (byte) (column + i);
+				if(Chessboard.this.isValidField((char) r, (byte) c)) {
+					Chessboard.this.fields[r - firstRow][c - firstColumn].mark();
+				}
+			}
+			//Mark a line down left
+			for(int i = 0; i < numberOfColumns; i++) {
+				int r = (char) (row + i);
+				int c = (byte) (column - i);
+				if(Chessboard.this.isValidField((char) r, (byte) c)) {
+					Chessboard.this.fields[r - firstRow][c - firstColumn].mark();
+				}
+			}
+			//Mark a line up right
+			for(int i = 0; i < numberOfColumns; i++) {
+				int r = (char) (row - i);
+				int c = (byte) (column + i);
+				if(Chessboard.this.isValidField((char) r, (byte) c)) {
+					Chessboard.this.fields[r - firstRow][c - firstColumn].mark();
+				}
+			}
+			//Mark a line up left
+			for(int i = 0; i < numberOfColumns; i++) {
+				int r = (char) (row - i);
+				int c = (byte) (column - i);
+				if(Chessboard.this.isValidField((char) r, (byte) c)) {
+					Chessboard.this.fields[r - firstRow][c - firstColumn].mark();
+				}
+			}
+		}
+		
 	}
 	
 	public class Pawn extends Chesspiece {
