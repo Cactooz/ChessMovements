@@ -338,6 +338,10 @@ public class Chessboard {
 			markDiagonals();
 		}
 		
+		public void unmarkReachableFields() {
+			unmarkLines();
+			unmarkDiagonals();
+		}
 	}
 	
 	public class King extends Chesspiece {
