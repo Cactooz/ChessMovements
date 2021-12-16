@@ -363,5 +363,19 @@ public class Chessboard {
 			}
 		}
 		
+		public void unmarkReachableFields() {
+			int[] moveRow = {-1, -1, -1, 0, 0, 1, 1, 1};
+			int[] moveCol = {-1, 0, 1, -1, 1, -1, 0, 1};
+			
+			for(int i = 0; i < moveRow.length; i++) {
+				if(Chessboard.this.isValidField((char) (row + moveRow[i]), (byte) (column + moveCol[i]))) {
+					int r = (char) (row - firstRow + moveRow[i]);
+					int c = (byte) (column - firstColumn + moveCol[i]);
+					
+					Chessboard.this.fields[r][c].unmark();
+				}
+			}
+		}
+		
 	}
 }
