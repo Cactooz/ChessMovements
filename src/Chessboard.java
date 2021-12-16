@@ -183,6 +183,9 @@ public class Chessboard {
 		int c = column - firstColumn;
 		
 		public void markReachableFields() {
+			int r = this.row - firstRow;
+			int c = this.column - firstColumn;
+			
 			for(int i = 0; i < numberOfColumns; i++) {
 				Chessboard.this.fields[r][i].mark();
 			}
@@ -192,6 +195,9 @@ public class Chessboard {
 		}
 		
 		public void unmarkReachableFields() {
+			int r = this.row - firstRow;
+			int c = this.column - firstColumn;
+			
 			for(int i = 0; i < numberOfColumns; i++) {
 				Chessboard.this.fields[r][i].unmark();
 			}
