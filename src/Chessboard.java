@@ -321,38 +321,7 @@ public class Chessboard {
 		}
 		
 		public void markReachableFields() {
-			//Mark a line down right
-			for(int i = 0; i < numberOfColumns; i++) {
-				int r = (char) (row + i);
-				int c = (byte) (column + i);
-				if(Chessboard.this.isValidField((char) r, (byte) c)) {
-					Chessboard.this.fields[r - firstRow][c - firstColumn].mark();
-				}
-			}
-			//Mark a line down left
-			for(int i = 0; i < numberOfColumns; i++) {
-				int r = (char) (row + i);
-				int c = (byte) (column - i);
-				if(Chessboard.this.isValidField((char) r, (byte) c)) {
-					Chessboard.this.fields[r - firstRow][c - firstColumn].mark();
-				}
-			}
-			//Mark a line up right
-			for(int i = 0; i < numberOfColumns; i++) {
-				int r = (char) (row - i);
-				int c = (byte) (column + i);
-				if(Chessboard.this.isValidField((char) r, (byte) c)) {
-					Chessboard.this.fields[r - firstRow][c - firstColumn].mark();
-				}
-			}
-			//Mark a line up left
-			for(int i = 0; i < numberOfColumns; i++) {
-				int r = (char) (row - i);
-				int c = (byte) (column - i);
-				if(Chessboard.this.isValidField((char) r, (byte) c)) {
-					Chessboard.this.fields[r - firstRow][c - firstColumn].mark();
-				}
-			}
+			markDiagonals();;
 		}
 		public void unmarkReachableFields() {
 			//Mark a line down right
