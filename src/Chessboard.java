@@ -332,6 +332,12 @@ public class Chessboard {
 		public Queen(char color) {
 			super(color, 'Q');
 		}
+		
+		public void markReachableFields() {
+			markLines();
+			markDiagonals();
+		}
+		
 	}
 	
 	public class King extends Chesspiece {
