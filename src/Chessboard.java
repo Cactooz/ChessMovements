@@ -182,6 +182,41 @@ public class Chessboard {
 			}
 		}
 		
+		public void unmarkDiagonals() {
+			//Unmark a line down right
+			for(int i = 0; i < numberOfColumns; i++) {
+				int r = (char) (row + i);
+				int c = (byte) (column + i);
+				if(Chessboard.this.isValidField((char) r, (byte) c)) {
+					Chessboard.this.fields[r - firstRow][c - firstColumn].unmark();
+				}
+			}
+			//Unmark a line down left
+			for(int i = 0; i < numberOfColumns; i++) {
+				int r = (char) (row + i);
+				int c = (byte) (column - i);
+				if(Chessboard.this.isValidField((char) r, (byte) c)) {
+					Chessboard.this.fields[r - firstRow][c - firstColumn].unmark();
+				}
+			}
+			//Unmark a line up right
+			for(int i = 0; i < numberOfColumns; i++) {
+				int r = (char) (row - i);
+				int c = (byte) (column + i);
+				if(Chessboard.this.isValidField((char) r, (byte) c)) {
+					Chessboard.this.fields[r - firstRow][c - firstColumn].unmark();
+				}
+			}
+			//Unmark a line up left
+			for(int i = 0; i < numberOfColumns; i++) {
+				int r = (char) (row - i);
+				int c = (byte) (column - i);
+				if(Chessboard.this.isValidField((char) r, (byte) c)) {
+					Chessboard.this.fields[r - firstRow][c - firstColumn].unmark();
+				}
+			}
+		}
+		
 	}
 	
 	public class Pawn extends Chesspiece {
