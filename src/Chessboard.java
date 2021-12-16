@@ -274,15 +274,7 @@ public class Chessboard {
 		}
 		
 		public void markReachableFields() {
-			int r = this.row - firstRow;
-			int c = this.column - firstColumn;
-			
-			for(int i = 0; i < numberOfColumns; i++) {
-				Chessboard.this.fields[r][i].mark();
-			}
-			for(int i = 0; i < numberOfRows; i++) {
-				Chessboard.this.fields[i][c].mark();
-			}
+			markLines();
 		}
 		
 		public void unmarkReachableFields() {
