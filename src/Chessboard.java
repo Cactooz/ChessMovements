@@ -179,9 +179,6 @@ public class Chessboard {
 			super(color, 'R');
 		}
 		
-		int r = row - firstRow;
-		int c = column - firstColumn;
-		
 		public void markReachableFields() {
 			int r = this.row - firstRow;
 			int c = this.column - firstColumn;
