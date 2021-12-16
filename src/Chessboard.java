@@ -278,15 +278,7 @@ public class Chessboard {
 		}
 		
 		public void unmarkReachableFields() {
-			int r = this.row - firstRow;
-			int c = this.column - firstColumn;
-			
-			for(int i = 0; i < numberOfColumns; i++) {
-				Chessboard.this.fields[r][i].unmark();
-			}
-			for(int i = 0; i < numberOfRows; i++) {
-				Chessboard.this.fields[i][c].unmark();
-			}
+			unmarkLines();
 		}
 	}
 	public class Knight extends Chesspiece {
