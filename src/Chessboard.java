@@ -100,7 +100,7 @@ public class Chessboard {
 	}
 	
 	public boolean isValidField(char row, byte column) {
-		if(row >= 'a' && row <= 'h' && column >= 0 && column < numberOfColumns)
+		if(row >= 'a' && row <= 'h' && column > 0 && column <= numberOfColumns)
 			return true;
 		else
 			return false;
