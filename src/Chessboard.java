@@ -207,6 +207,21 @@ public class Chessboard {
 		public Knight(char color) {
 			super(color, 'N');
 		}
+		
+		public void markReachableFields() {
+			int[] moveRow = {-2, -2, -1, 1, 2, 2, 1, -1};
+			int[] moveCol = {1, -1, -2, -2, -1, 1, 2, 2};
+			
+			for(int i = 0; i < numberOfColumns; i++) {
+				if(Chessboard.this.isValidField((char) (row + moveRow[i]), (byte) (column + moveCol[i]))) {
+					int r = (char) (row - firstRow + moveRow[i]);
+					int c = (byte) (column - firstColumn + moveCol[i]);
+					
+					Chessboard.this.fields[r][c].mark();
+				}
+			}
+		}
+		
 	}
 	
 	public class Bishop extends Chesspiece {
