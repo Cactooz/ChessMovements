@@ -132,9 +132,12 @@ public class Chessboard {
 		public void moveTo(char row, byte column) throws NotValidFieldException {
 			if(!Chessboard.this.isValidField(row, column))
 				throw new NotValidFieldException("bad field: " + row + column );
-				
-			int r = this.row - firstRow;
-			int c = this.column - firstColumn;
+			
+			this.row = row;
+			this.column = column;
+			
+			int r = row - firstRow;
+			int c = column - firstColumn;
 			Chessboard.this.fields[r][c].put(this);
 		}
 		
