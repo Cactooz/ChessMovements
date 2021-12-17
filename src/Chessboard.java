@@ -52,9 +52,8 @@ public class Chessboard {
 	//Creates the board
 	public Chessboard() {
 		fields = new Field[numberOfRows][numberOfColumns];
-		char row = 0;
-		
-		byte column = 0;
+		char row;
+		byte column;
 		for (int r = 0; r < numberOfRows; r++)
 		{
 			row = (char) (firstRow + r);
@@ -348,7 +347,7 @@ public class Chessboard {
 		
 		//Mark the diagonals from the Bishop
 		public void markReachableFields() {
-			markDiagonals();;
+			markDiagonals();
 		}
 		
 		//Unmark the diagonals from the Bishop
