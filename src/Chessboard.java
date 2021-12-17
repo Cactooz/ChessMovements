@@ -99,10 +99,7 @@ public class Chessboard {
 	
 	//Check if the field is a valid field on to board
 	public boolean isValidField(char row, byte column) {
-		if(row >= 'a' && row <= 'h' && column > 0 && column <= numberOfColumns)
-			return true;
-		else
-			return false;
+		return row >= 'a' && row <= 'h' && column > 0 && column <= numberOfColumns;
 	}
 	
 	public abstract class Chesspiece {
