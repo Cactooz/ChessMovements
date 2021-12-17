@@ -138,7 +138,9 @@ public class Chessboard {
 			Chessboard.this.fields[r][c].put(this);
 		}
 		
-		public void moveOut() {}
+		public void moveOut() {
+			Chessboard.this.fields[this.row - firstRow][this.column - firstColumn].take();
+		}
 		
 		public abstract void markReachableFields();
 		
